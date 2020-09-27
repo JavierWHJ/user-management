@@ -1,23 +1,28 @@
 import React from "react";
-import { Alert } from "react-bootstrap";
+import { Alert, Button } from "react-bootstrap";
 import { Table } from "react-bootstrap";
 import SearchComponent from "../components/SearchComponent";
 import UserComponent from "../components/UserComponent";
-import { Users } from "../type";
+import { User } from "../type";
 
 interface Props {
-    users: Users[] | undefined;
+    users: User[] | undefined;
 }
 
 const UserContainer = (props: Props) => {
     return (
         <div>
+            <div className="mt-4 d-flex justify-content-between">
+                <h2>Users</h2>
+                <Button>Add User</Button>
+            </div>
             <SearchComponent />
             {props.users && props.users.length !== 0 ? (
                 <Table
                     striped
                     bordered
                     hover
+                    responsive
                     style={{
                         marginTop: "20px",
                     }}
@@ -45,6 +50,7 @@ const UserContainer = (props: Props) => {
                 </Table>
             ) : (
                 <Alert
+                    variant="info"
                     style={{
                         marginTop: "20px",
                     }}

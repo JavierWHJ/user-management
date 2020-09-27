@@ -3,14 +3,14 @@ import { Navbar } from 'react-bootstrap';
 
 const Header = () => {
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="dark" variant="dark" className="p-3">
             <Navbar.Brand href="/">
             <img
                 alt=""
-                src="/logo.svg"
-                width="30"
+                src="/logo.png"
+                width="40"
                 height="30"
-                className="d-inline-block align-top"
+                className="d-inline-block align-top mr-2"
             />{' '}
             User Management
             </Navbar.Brand>

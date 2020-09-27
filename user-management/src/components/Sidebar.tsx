@@ -8,12 +8,12 @@ const Sidebar = () => {
             <div className="container-fluid text-center d-flex flex-column align-items-center justify-content-center">
                 <img
                     alt=""
-                    src="/logo.svg"
-                    width="30"
-                    height="30"
+                    src="/user.svg"
+                    width="40"
+                    height="40"
                     className="d-inline-block align-top"
                 />
-                Welcome User!
+                <span className="my-3">Welcome User!</span>
             </div>
             <div className="sidebar-sticky"></div>
             <Nav.Item>

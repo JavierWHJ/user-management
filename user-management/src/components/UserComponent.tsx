@@ -1,10 +1,10 @@
 import moment from 'moment';
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Users } from '../type';
+import { User } from '../type';
 
 interface Props {
-    user: Users | undefined
+    user: User | undefined
 }
 
 const UserComponent = (props: Props) => {
@@ -13,12 +13,12 @@ const UserComponent = (props: Props) => {
         <>
             {props.user ? 
             <tr key={props.user.id}>
-                    <td>{props.user.firstName + ' ' + props.user.lastName}</td>
+                    <td><img src="/user-default.png" className="mr-3"/>{props.user.firstName + ' ' + props.user.lastName}</td>
                     <td>{props.user.email}</td>
                     <td>{moment(new Date(props.user.dob)).format('DD MMM YYYY')}</td>
-                    <td className="d-flex justify-content-around">
-                        <Button variant="success">Update</Button>
-                        <Button variant="danger">Delete</Button>
+                    <td className="d-flex justify-content-center">
+                        <Button variant="success" className="mr-4" block>Update</Button>
+                        <Button variant="danger" className="mt-0" block>Delete</Button>
                     </td>
             </tr> : ''}
         </>

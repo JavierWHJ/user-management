@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import userService from "../services/userService";
-import { User } from '../type';
+import { User, UserData } from '../type';
 import UserContainer from './UserContainer';
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
         })
     }
 
-    const addUser = (newUser: User) => {
+    const addUser = (newUser: UserData) => {
         userService.addUser(newUser).then((users) => {
             getUsers();
         })

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Alert, Button } from "react-bootstrap";
 import { Table } from "react-bootstrap";
+import AddUserModal from "../components/AddUserModal";
 import SearchComponent from "../components/SearchComponent";
 import UserComponent from "../components/UserComponent";
 import { User } from "../type";
@@ -11,11 +12,33 @@ interface Props {
 }
 
 const UserContainer = (props: Props) => {
+    const [toggleAddModal, setToggleAddModal] = useState<boolean>(false);
+    const [toggleEditModal, setToggleEditModal] = useState<boolean>(false);
+    const [toggleDeleteModal, setToggleDeleteModal] = useState<boolean>(false);
+
+    const openAddModal = () => {
+        setToggleAddModal(true);
+    }
+
+    const openEditModal = () => {
+        setToggleEditModal(true);
+    }
+
+    const openDeleteModal = () => {
+        setToggleDeleteModal(true);
+    }
+
+    const closeModal = () => {
+        setToggleAddModal(false);
+        setToggleEditModal(false);
+        setToggleDeleteModal(false);
+    }
+
     return (
         <div>
             <div className="mt-4 d-flex justify-content-between">
                 <h2>Users</h2>
-                <Button>Add User</Button>
+                <Button onClick={openAddModal}>Add User</Button>
             </div>
             <SearchComponent searchUser={props.searchUser}/>
             {props.users && props.users.length !== 0 ? (
@@ -56,9 +79,10 @@ const UserContainer = (props: Props) => {
                         marginTop: "20px",
                     }}
                 >
-                    {"There are no users created yet."}
+                    {"There are no users."}
                 </Alert>
             )}
+            <AddUserModal toggleModal={toggleAddModal} closeModal={closeModal}/>
         </div>
     );
 };

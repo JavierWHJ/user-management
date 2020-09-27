@@ -29,19 +29,17 @@ const AddUserModal = (props: any) => {
                 </Modal.Header>
                 <form className="form-horizontal" onSubmit={props.handleSubmit}>
                     <Modal.Body>
-                        <Form.Row>
-                        <Form.Group as={Col} md="6" controlId="validationCustom01">
-                            <Form.Label>First name</Form.Label>
-                            <Form.Control
-                                required
-                                type="text"
-                                name="firstName"
-                                placeholder="First name"
-                            />
-                            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                            </Form.Group>
-                        </Form.Row>
-                        <Form.Group as={Col} md="6" controlId="validationCustom02">
+                    <Form.Group controlId="validationCustom01">
+                        <Form.Label>First name</Form.Label>
+                        <Form.Control
+                            required
+                            type="text"
+                            name="firstName"
+                            placeholder="First name"
+                        />
+                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                        </Form.Group>
+                        <Form.Group controlId="validationCustom02">
                             <Form.Label>Last name</Form.Label>
                             <Form.Control
                                 required
@@ -51,7 +49,7 @@ const AddUserModal = (props: any) => {
                             />
                             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col} controlId="validationCustom03">
+                        <Form.Group controlId="validationCustom03">
                             <Form.Label>Email</Form.Label>
                             <Form.Control
                                 required
@@ -61,7 +59,7 @@ const AddUserModal = (props: any) => {
                             />
                             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group as={Col} controlId="validationCustom04">
+                        <Form.Group controlId="validationCustom04">
                             <Form.Label>Date of Birth</Form.Label>
                             <Form.Control
                                 required

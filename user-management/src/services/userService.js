@@ -20,7 +20,7 @@ const addUser = (newUser) => {
 }
 
 const updateUser = (userToUpdate) => {
-    return fetch("http://localhost:3030/users" + id, {
+    return fetch("http://localhost:3030/users/" + id, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -34,7 +34,7 @@ const updateUser = (userToUpdate) => {
 }
 
 const deleteUser = (userToDelete) => {
-    return fetch("http://localhost:3030/users" + id, {
+    return fetch("http://localhost:3030/users/" + id, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"

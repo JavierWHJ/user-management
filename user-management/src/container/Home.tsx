@@ -22,6 +22,18 @@ const Home = () => {
         })
     }
 
+    const updateUser = (id: number, userToUpdate: User) => {
+        userService.updateUser(id, userToUpdate).then((users) => {
+            getUsers();
+        })
+    }
+
+    const deleteUser = (id: number) => {
+        userService.deleteUser(id).then((users) => {
+            getUsers();
+        })
+    }
+
     return (
         <div>
             <UserContainer users={users}/>

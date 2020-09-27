@@ -10,14 +10,14 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing and Running the App
 
-- Install Dependencies inside the user-management folder.
+Install Dependencies inside the user-management folder.
 
 ```
 npm install
 ```
 
-- Runs the mock server (json-server)
-- Has to be running for CRUD API endpoints to work
+Runs the mock server (json-server)
+Has to be running for CRUD API endpoints to work
 
 ```
 json-server --port 3030 --watch db.json
@@ -29,8 +29,8 @@ Routes
 * PUT /users/id
 * DELETE /users/id
 
-- Runs the app in the development mode. The app will automatically reload if you change any of the source files.
-- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in the development mode. The app will automatically reload if you change any of the source files.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ```
 npm start

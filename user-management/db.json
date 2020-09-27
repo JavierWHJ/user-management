@@ -15,18 +15,18 @@
       "id": 4
     },
     {
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "john.doe@gmail.com",
-      "dob": 1555200000,
-      "id": 1
-    },
-    {
       "firstName": "Javier",
       "lastName": "Wong",
       "email": "javierwhj@gmail.com",
       "dob": 1599696000000,
       "id": 6
+    },
+    {
+      "firstName": "John",
+      "lastName": "Lee",
+      "email": "johnlee@gmail.com",
+      "dob": 1601078400000,
+      "id": 7
     }
   ]
 }

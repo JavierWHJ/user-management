@@ -6,7 +6,8 @@ import UserComponent from "../components/UserComponent";
 import { User } from "../type";
 
 interface Props {
-    users: User[] | undefined;
+    users: User[];
+    searchUser: (query: string) => void;
 }
 
 const UserContainer = (props: Props) => {
@@ -16,7 +17,7 @@ const UserContainer = (props: Props) => {
                 <h2>Users</h2>
                 <Button>Add User</Button>
             </div>
-            <SearchComponent />
+            <SearchComponent searchUser={props.searchUser}/>
             {props.users && props.users.length !== 0 ? (
                 <Table
                     striped

@@ -4,7 +4,7 @@ import { User } from '../type';
 import UserContainer from './UserContainer';
 
 const Home = () => {
-    const [users, setUsers] = useState<User[]>();
+    const [users, setUsers] = useState<User[]>([]);
 
     useEffect(() => {
         getUsers();
@@ -34,9 +34,23 @@ const Home = () => {
         })
     }
 
+    const searchUser = (query: string) => {
+        // this func filter users based on search query
+        if(query == ''){
+            getUsers();
+        }
+        const filteredUsers = users.filter(
+            user =>
+                user.firstName
+                    .toLowerCase()
+                    .indexOf(query.toLowerCase()) !== -1
+        );
+        setUsers(filteredUsers)
+    };
+
     return (
         <div>
-            <UserContainer users={users}/>
+            <UserContainer users={users} searchUser={searchUser}/>
         </div>
     );
 }

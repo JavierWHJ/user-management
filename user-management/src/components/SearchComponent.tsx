@@ -1,11 +1,19 @@
 import React from 'react';
 
-const SearchComponent = () => {
+interface Props {
+    searchUser: (query: string) => void;
+}
+
+const SearchComponent = (props: Props) => {
+
+    const handleChange = (e: any) => {
+        props.searchUser(e.target.value);
+    }
+
     return (
         <div>
             <input 
-                // onChange={this.handleSearch} 
-                // value={this.state.searchterm} 
+                onChange={handleChange}
                 name="searchterm" 
                 className="form-control form-control-lg mt-3" 
                 placeholder="Search User" 

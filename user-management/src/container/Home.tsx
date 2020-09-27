@@ -50,7 +50,7 @@ const Home = () => {
 
     return (
         <div>
-            <UserContainer users={users} searchUser={searchUser}/>
+            <UserContainer users={users} searchUser={searchUser} addUser={addUser} updateUser={updateUser} deleteUser={deleteUser}/>
         </div>
     );
 }

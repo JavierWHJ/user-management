@@ -16,15 +16,17 @@ const Sidebar = () => {
                 <span className="my-3">Welcome User!</span>
             </div>
             <div className="sidebar-sticky"></div>
-            <Nav.Item>
-                <Nav.Link active>Users</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="link-1">Tools</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-                <Nav.Link eventKey="link-2">Settings</Nav.Link>
-            </Nav.Item>
+            <div className="ml-3">
+                <Nav.Item>
+                    <Nav.Link active>Users</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link eventKey="link-1">Tools</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link eventKey="link-2">Settings</Nav.Link>
+                </Nav.Item>
+            </div>
         </Nav>
     );
 }

@@ -34,6 +34,20 @@
       "email": "john.doe @gmail.com",
       "dob": 1595493789,
       "id": 5
+    },
+    {
+      "firstName": "Javier",
+      "lastName": "Wong",
+      "email": "javier.wong.2018@sis.smu.edu.sg",
+      "dob": 1599004800000,
+      "id": 6
+    },
+    {
+      "firstName": "Javier",
+      "lastName": "Wong",
+      "email": "javierwhj@gmail.wcom",
+      "dob": -23898844800000,
+      "id": 7
     }
   ]
 }

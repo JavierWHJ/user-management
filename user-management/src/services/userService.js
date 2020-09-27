@@ -7,19 +7,31 @@ const fetchUsers = () => {
     .catch(console.log);
 }
 
-const addUser = (newUser) => {
+const addUser = (user) => {
+    const userToAdd = {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        dob: new Date(user.dob).getTime()
+    }
     return fetch("http://localhost:3030/users", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(newUser)
+        body: JSON.stringify(userToAdd)
     }).then(res => {
         return res
     });
 }
 
-const updateUser = (id, userToUpdate) => {
+const updateUser = (id, user) => {
+    const userToUpdate = {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        dob: new Date(user.dob).getTime()
+    }
     return fetch("http://localhost:3030/users/" + id, {
         method: "PUT",
         headers: {

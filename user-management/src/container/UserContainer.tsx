@@ -4,11 +4,14 @@ import { Table } from "react-bootstrap";
 import AddUserModal from "../components/AddUserModal";
 import SearchComponent from "../components/SearchComponent";
 import UserComponent from "../components/UserComponent";
-import { User } from "../type";
+import { User, UserData } from "../type";
 
 interface Props {
     users: User[];
     searchUser: (query: string) => void;
+    addUser: (newUser: UserData) => void;
+    updateUser: (id: number, userToUpdate: User) => void;
+    deleteUser: (id: number) => void
 }
 
 const UserContainer = (props: Props) => {
@@ -82,7 +85,7 @@ const UserContainer = (props: Props) => {
                     {"There are no users."}
                 </Alert>
             )}
-            <AddUserModal toggleModal={toggleAddModal} closeModal={closeModal}/>
+            <AddUserModal toggleModal={toggleAddModal} closeModal={closeModal} addUser={props.addUser}/>
         </div>
     );
 };

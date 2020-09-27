@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <div
+        class="mt-4 d-flex justify-content-between"
+      >
+        <h2>
+          Users
+        </h2>
+        <button
+          class="btn btn-primary"
+          type="button"
+        >
+          Add User
+        </button>
+      </div>
+      <div>
+        <input
+          class="form-control form-control-lg mt-3"
+          name="searchterm"
+          placeholder="Search User"
+          type="text"
+        />
+      </div>
+      <div
+        class="fade alert alert-info show"
+        role="alert"
+        style="margin-top: 20px;"
+      >
+        There are no users.
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

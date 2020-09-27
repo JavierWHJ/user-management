@@ -1,10 +1,10 @@
 import React from "react";
-import App from "./App";
+import Header from "./Header";
 
 import { render } from "@testing-library/react";
 
 it("matches snapshot", () => {
-  const { asFragment } = render(<App />);
+  const { asFragment } = render(<Header />);
 
   expect(asFragment()).toMatchSnapshot();
 });

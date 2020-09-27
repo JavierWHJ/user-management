@@ -1,10 +1,10 @@
 import React from "react";
-import App from "./App";
+import Sidebar from "./Sidebar";
 
 import { render } from "@testing-library/react";
 
 it("matches snapshot", () => {
-  const { asFragment } = render(<App />);
+  const { asFragment } = render(<Sidebar />);
 
   expect(asFragment()).toMatchSnapshot();
 });

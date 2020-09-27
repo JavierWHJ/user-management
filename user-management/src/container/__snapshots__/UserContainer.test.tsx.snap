@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="mt-4 d-flex justify-content-between"
+    >
+      <h2>
+        Users
+      </h2>
+      <button
+        class="btn btn-primary"
+        type="button"
+      >
+        Add User
+      </button>
+    </div>
+    <div>
+      <input
+        class="form-control form-control-lg mt-3"
+        name="searchterm"
+        placeholder="Search User"
+        type="text"
+      />
+    </div>
+    <div
+      class="table-responsive"
+    >
+      <table
+        class="table table-striped table-bordered table-hover"
+        style="margin-top: 20px;"
+      >
+        <thead>
+          <tr>
+            <th>
+              Name
+            </th>
+            <th>
+              Email
+            </th>
+            <th>
+              Date of Birth
+            </th>
+            <th>
+              Actions
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div
+                class="d-flex align-items-center"
+              >
+                <div
+                  class="avatar-circle"
+                >
+                  <span
+                    class="initials"
+                  >
+                    BD
+                  </span>
+                </div>
+                <span
+                  class="ml-3"
+                >
+                  Bob Doe
+                </span>
+              </div>
+            </td>
+            <td>
+              bob.doe@gmail.com
+            </td>
+            <td>
+              24 Nov 1994
+            </td>
+            <td>
+              <div
+                class="d-flex justify-content-center mt-2"
+              >
+                <button
+                  class="mr-4 btn btn-success btn-block"
+                  type="button"
+                >
+                  Update
+                </button>
+                <button
+                  class="mt-0 btn btn-danger btn-block"
+                  type="button"
+                >
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;

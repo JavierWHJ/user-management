@@ -36,10 +36,25 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 npm start
 ```
 
+## Running unit tests
+
+```
+npm test
+```
+
+## Deployment
+
+- Builds the app for production. The build artifacts will be stored in the `dist/` directory (with gzip mode).
+
+```
+npm run build
+```
+
 ## Built With
 
 - React (Front End Framework).
 - TypeScript (Static Typing for Javascript).
+- React-Testing-Library (Testing Framework).
 
 ## Authors
 

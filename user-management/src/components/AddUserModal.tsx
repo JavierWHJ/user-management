@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import { Alert, Button, Form, Modal } from 'react-bootstrap';
+import { Button, Form, Modal } from 'react-bootstrap';
 import { UserData } from '../type';
-import { ErrorMsg, validateUserData } from '../utils';
+import { validateUserData } from '../utils';
 
-const AddUserModal = (props: any) => {
+interface Props {
+    toggleModal: boolean,
+    closeModal: () => void,
+    addUser: (newUser: UserData) => void
+}
 
+const AddUserModal = (props: Props) => {
+    const [validated, setValidated] = useState(false);
     const [userData, setUserData] = useState<UserData>({
         firstName: '',
         lastName: '',
@@ -14,7 +20,14 @@ const AddUserModal = (props: any) => {
 
     const { firstName, lastName, email, dob } = userData;
 
-    const handleCreate = () => {
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        if (form.checkValidity() === false) {
+            e.stopPropagation();
+        }
+
+        setValidated(true);
         if(validateUserData(userData)){
             props.addUser(userData)
             setUserData({
@@ -47,7 +60,7 @@ const AddUserModal = (props: any) => {
                 <Modal.Header closeButton>
                     <Modal.Title>Add User</Modal.Title>
                 </Modal.Header>
-                <form className="form-horizontal">
+                <Form className="form-horizontal" noValidate validated={validated} onSubmit={handleSubmit}>
                     <Modal.Body>
                         <Form.Group>
                             <Form.Label>First name</Form.Label>
@@ -59,11 +72,9 @@ const AddUserModal = (props: any) => {
                                 onChange={e => handleChange(e)}
                                 placeholder="First name"
                             />
-                            {!firstName && <ErrorMsg warning='empty' item='First name' />}
-                            {firstName && !/^[a-zA-Z]+$/.test(firstName) && (
-                            <ErrorMsg warning='invalid' item='First name' />
-                            )}
-                            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">
+                                Please enter a first name.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Last name</Form.Label>
@@ -75,11 +86,9 @@ const AddUserModal = (props: any) => {
                                 onChange={e => handleChange(e)}
                                 placeholder="Last name"
                             />
-                            {!lastName && <ErrorMsg warning='empty' item='Last name' />}
-                            {lastName && !/^[a-zA-Z]+$/.test(lastName) && (
-                            <ErrorMsg warning='invalid' item='Last name' />
-                            )}
-                            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">
+                                Please enter a last name.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Email</Form.Label>
@@ -91,11 +100,9 @@ const AddUserModal = (props: any) => {
                                 onChange={e => handleChange(e)}
                                 placeholder="Email"
                             />
-                            {!email && <ErrorMsg warning='empty' item='Email' />}
-                            {email && !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email) && (
-                            <ErrorMsg warning='invalid' item='Email' />
-                            )}
-                            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">
+                                Please enter an email.
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Date of Birth</Form.Label>
@@ -106,18 +113,16 @@ const AddUserModal = (props: any) => {
                                 value={dob}
                                 onChange={e => handleChange(e)}
                             />
-                            {!dob && <ErrorMsg warning='empty' item='Date of Birth' />}
-                            {dob && !/^\d{4}[./-]\d{2}[./-]\d{2}$/.test(dob) && (
-                            <ErrorMsg warning='invalid' item='Date of Birth' />
-                            )}
-                            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                        </Form.Group>      
+                            <Form.Control.Feedback type="invalid">
+                                Please enter a date of birth.
+                            </Form.Control.Feedback>
+                        </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={handleClose}>Close</Button>
-                        <Button variant="primary" onClick={handleCreate}>Add User</Button>
+                        <Button variant="primary" type="submit">Add User</Button>
                     </Modal.Footer>
-                </form>
+                </Form>
             </Modal>
         </>
     );

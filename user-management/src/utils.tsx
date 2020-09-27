@@ -1,10 +1,10 @@
 import { UserData } from './type';
 
 export const validateUserData = (userData: UserData) => {
-  if(!userData.firstName || !/^[a-zA-Z]+$/.test(userData.firstName)){
+  if(!userData.firstName){
       return false;
   }
-  if(!userData.lastName || !/^[a-zA-Z]+$/.test(userData.lastName)){
+  if(!userData.lastName){
       return false;
   }
   if(!userData.email || !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(userData.email)){

@@ -1,45 +1,31 @@
 {
   "users": [
     {
-      "id": 2,
-      "firstName": "Jane",
-      "lastName": "Doe",
-      "email": "jane.doe @gmail.com",
-      "dob": 1595493789
-    },
-    {
-      "id": 3,
       "firstName": "Bob",
       "lastName": "Doe",
-      "email": "bob.doe @gmail.com",
-      "dob": 1595493789
+      "email": "bob.doe@gmail.com",
+      "dob": 785635200000,
+      "id": 3
     },
     {
-      "id": 4,
       "firstName": "Harry",
       "lastName": "Doe",
-      "email": "harry.doe @gmail.com",
-      "dob": 1595493789
-    },
-    {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "john.doe @gmail.com",
-      "dob": 1595493789
+      "email": "harry.doe@gmail.com",
+      "dob": 1555200000,
+      "id": 4
     },
     {
       "firstName": "John",
       "lastName": "Doe",
-      "email": "john.doe @gmail.com",
-      "dob": 1595493789,
-      "id": 5
+      "email": "john.doe@gmail.com",
+      "dob": 1555200000,
+      "id": 1
     },
     {
       "firstName": "Javier",
       "lastName": "Wong",
-      "email": "javier.wong.2018@sis.smu.edu.sg",
-      "dob": 1599004800000,
+      "email": "javierwhj@gmail.com",
+      "dob": 1599696000000,
       "id": 6
     }
   ]

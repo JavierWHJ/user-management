@@ -22,7 +22,7 @@ const Home = () => {
         })
     }
 
-    const updateUser = (id: number, userToUpdate: User) => {
+    const updateUser = (id: number, userToUpdate: UserData) => {
         userService.updateUser(id, userToUpdate).then((users) => {
             getUsers();
         })

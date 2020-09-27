@@ -44,17 +44,3 @@ npm start
 ## Authors
 
 - **Javier** - [@javierwhj](https://github.com/javierwhj)
-
-
-## Available Scripts
-
-In the project directory, you can run:
-
-
-## npm install
-
-installs all dependencies
-
-## npm start
-
-Runs the app in the development mode.<br />

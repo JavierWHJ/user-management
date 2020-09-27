@@ -19,7 +19,7 @@ const addUser = (newUser) => {
     });
 }
 
-const updateUser = (userToUpdate) => {
+const updateUser = (id, userToUpdate) => {
     return fetch("http://localhost:3030/users/" + id, {
         method: "PUT",
         headers: {
@@ -33,14 +33,12 @@ const updateUser = (userToUpdate) => {
         });
 }
 
-const deleteUser = (userToDelete) => {
+const deleteUser = (id) => {
     return fetch("http://localhost:3030/users/" + id, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json"
-        },
-        body: JSON.stringify(userToDelete)
-        })
+        }})
         .then(res => res.json())
         .then(result => {
             return result
